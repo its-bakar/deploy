@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express();
-
+app.use(
+  cors({
+    origin: "https://deploy-two-beta.vercel.app",
+    methods: ["GET"],
+    credentials: true,
+  })
+);
+app.use(express.json());
 mongoose.connect("mongodb://localhost:27017/crud").then(() => {
   console.log("Connected to MongoDB!");
 });
