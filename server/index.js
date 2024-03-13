@@ -1,5 +1,9 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
+const UserModel = require("./models/users");
+
 app.use(
   cors({
     origin: "https://deploy-two-beta.vercel.app",
